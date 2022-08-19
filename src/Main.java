@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -69,6 +70,25 @@ public class Main {
         // sorting as per name or roll number
         // searching for a student -> by values, name or roll number or email,
         // compare(equality) object if I implemented equals
+        Student searchStudent = new Student();
+        searchStudent.setName("Akash");
+        searchStudent.setEmail("vaibhav");
+        searchStudent.setRollNo(12);
+        // calling search method
+        // object of Main clas
+        Main obj = new Main();
+        if(obj.search(searchStudent,students)){
+            System.out.println(searchStudent + " --> Found");
+        }
+        else{
+            System.out.println(searchStudent + " --> Not Found");
+        }
+
+        // calling sorting method
+        Student[] sortedArray = obj.sorting(students.clone());
+        System.out.println(Arrays.toString(sortedArray));
+        System.out.println("original array");
+        System.out.println(Arrays.toString(students));
     }
     public boolean search(Student searchObject, Student[] studentList){
         boolean response = false;
